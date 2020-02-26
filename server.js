@@ -12,8 +12,8 @@ app.use(cors())
 
 app.get('/', (req, res) => {
   const data = axios.get('https://2uexriexp6.execute-api.us-east-2.amazonaws.com/abc')
-  .then((res) => {
-    res.send(res.data);
+  .then((resp) => {
+    res.send(resp.data);
   });
 });
 
