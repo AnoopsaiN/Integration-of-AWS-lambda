@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<div id="display">
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js" integrity="sha256-T/f7Sju1ZfNNfBh7skWn0idlCBcI3RwdLSS4/I7NQKQ=" crossorigin="anonymous"></script>
+<script>
+    var intervalID = window.setInterval(callApi, 10000);
+    function callApi() {
+        axios.get("http://64.225.28.35:3000")
+        .then(resp=>{
+            console.log(resp)
+            var display = document.createElement('div');
+            display.innerHTML = resp.data;
+            document.getElementById('display').appendChild(display)
+        });
+    }
+</script>
+</body>
+</html>
